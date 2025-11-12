@@ -10,6 +10,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import Icon from '@/components/ui/icon';
 import { toast } from 'sonner';
+import { Link } from 'react-router-dom';
 
 type UserRole = 'client' | 'driver';
 
@@ -126,10 +127,12 @@ const Index = () => {
                 <p className="text-sm text-white/80">Биржа трезвых водителей</p>
               </div>
             </div>
-            <Button variant="outline" className="bg-white text-primary hover:bg-white/90 border-0">
-              <Icon name="User" size={18} className="mr-2" />
-              Профиль
-            </Button>
+            <Link to="/profile">
+              <Button variant="outline" className="bg-white text-primary hover:bg-white/90 border-0">
+                <Icon name="User" size={18} className="mr-2" />
+                Профиль
+              </Button>
+            </Link>
           </div>
 
           <Tabs value={userRole} onValueChange={(v) => setUserRole(v as UserRole)} className="w-full max-w-md mx-auto">
